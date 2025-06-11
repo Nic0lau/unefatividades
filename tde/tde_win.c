@@ -1,4 +1,4 @@
-/* Versão que guarda os números como double para maior portabilidade */
+/* Código para Windows */
 #include <errno.h>
 #include <float.h>
 #include <limits.h>
@@ -6,11 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef _WIN32
-#include <conio.h>
-#else
-#define clrscr() printf("\033[2J\033[H");
-#endif
 #define TAMANHO_BUF 32
 #define PI 3.141592653589793238462643383279502884
 
@@ -105,6 +100,8 @@ main(void)
 	double n, n2;
 	int op;
 
+	puts("\nCalculadora de áreas - TDE 1° Semestre - Linguagem de Programação\nParticipantes (THEriveis):\n-Davi Soares Daltro\n-Igor Mascarenhas Oliveira Magalhães\n-José Sinfrônio de Oliveira Neto\n-Nicolas Ribeiro Dias\n-Vitor Gabriel Silva Matos\n-Wagner Cardeal de Jesus\n\n");
+
 	while (1) {
 		memset(buf, '\0', TAMANHO_BUF);
 		errno = 0;
@@ -157,7 +154,7 @@ main(void)
 			printf("%lf\n", n * n2 / 2);
 			break;
 		case 5:
-			clrscr();
+			system("cls");
 			break;
 		case 6:
 			return 0;
